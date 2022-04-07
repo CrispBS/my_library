@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Big Brother - Моя библиотека</title>
+    <link rel="stylesheet" href="css/index.min.css">
+    <script> src="js/index.min.js"</script>
+</head>
+<body>
+<section class="library">
+    <header class="header library_header">
+        <div class="conteiner"> 
+            <img src="img/logo.svg" alt="Логотип big Brother">
+
+            <button class="header__btn-add">Добавить книгу</button>
+             
+            <button class="header_btn header_btn-search">поиск</button>
+        </div>
+    </header>
+
+    <div class="container library_titles">
+     <h1 class="libray_title">Моя библиотека</h1>
+
+     <p class="library_count">3 книги</p>
+
+     <div class="library_fields fields">
+        <div class="fields_block">
+            <button class="fields_btn fields_btn_sort">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M3 18H9V16H3V18ZM3 6V8H21V6H3ZM3 13H15V11H3V13Z" fill="white"/>
+                </svg>
+                <span class="fields_text">По рейтингу</span>
+            </button>
+    
+            <ul class="fields_list fields_list_sort">
+                <li class="fields_item">
+                    <button class="fields_btn">от большего</button>
+                </li>
+                <li class="fields_item">
+                    <button class="fields_btn">от меньшего</button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="fields_block">
+            <button class="fields_btn fields_btn_filter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4.24999 5.61C6.26999 8.2 9.99999 13 9.99999 13V19C9.99999 19.55 10.45 20 11 20H13C13.55 20 14 19.55 14 19V13C14 13 17.72 8.2 19.74 5.61C20.25 4.95 19.78 4 18.95 4H5.03999C4.20999 4 3.73999 4.95 4.24999 5.61Z" 
+                        fill="white"/>
+                </svg>                
+                <span class="fields_text">Фильтр</span>
+            </button>
+    
+            <ul class="fields_list fields_list_sort">
+                <li class="fields_item">
+                    <button class="fields_btn">хочу прочитать</button>
+                </li>
+                <li class="fields_item">
+                    <button class="fields_btn">прочитал</button>
+                </li>
+                <li class="fields_item">
+                    <button class="fields_btn">читаю</button>
+                </li>
+                <li class="fields_item">
+                    <button class="fields_btn">не дочитал</button>
+                </li>
+            </ul>
+        </div>
+     </div>
+    </div>
+
+    <div class="container_library_list-container">
+        <h2 class="visually-hidden">Список книг</h2>
+        <ul class="library_list">
+            <li class="library_item">
+                <a href="/book">
+                    <article class="card">
+                        <div class="card_picture">
+                            <img src="img/1984.jpg" alt="обложка 1984" class="cart_image"> 
+                            <p class="card_label">хочу почитать</p>
+                        </div>
+                        <div class="cart_content">
+                            <h3 class="cart_title">1984</h3>
+                            
+                            <p class="cart_author">Джордж Оруэлл</p>
+
+                            <p class="card_description">Главный герой — Уинстон Смит — живёт в Лондоне, работает в Министерстве правды и является... </p>
+
+                            <div class="card_rating">
+                                <img class="cart_rating-star" src="img/star.svg" alt="Рейтинг 4 из 5">
+                                <img class="cart_rating-star" src="img/star.svg" alt="">
+                                <img class="cart_rating-star" src="img/star.svg" alt="">
+                                <img class="cart_rating-star" src="img/star.svg" alt="">
+                                <img class="cart_rating-star" src="img/star-o.svg" alt="">
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </li>
+        </ul>
+    </div>   
+</section>
+
+<section class="book"></section>
+
+<section class="add"></section>
+</body>
+</html>
