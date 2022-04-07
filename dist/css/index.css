@@ -18,3 +18,7 @@
   font-display: swap;
   src: url("../fonts/Roboto-900.woff2") format("woff2"), url("../fonts/Roboto-900.woff2") format("woff2");
 }
+
+body {
+  font-family: sans-serif;
+}
