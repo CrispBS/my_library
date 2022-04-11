@@ -1,0 +1,19 @@
+.footer {
+    position: fixed; //расположние
+    bottom: 0; 
+    display: flex; //расположение элементов внутри
+    justify-content: center;
+    align-items: center;
+
+    width: 100%; //размеры
+    height: 74px;
+     
+    background-color: $dark; //стилизация внешнего вида
+
+    @media (max-height: 500px) {
+        width: auto;
+        right: 0;
+        padding: 20px;
+        background-color: transparent;
+    }
+}
