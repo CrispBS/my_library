@@ -1,0 +1,37 @@
+.status{
+    margin-bottom: 40px;
+    &_list{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    &_radio{
+        position: absolute;
+        -moz-appearance: none;
+        -webkit-appearance: none;
+        appearance: none;
+    }
+    &_label{
+        display: inline-block;
+        padding: 8px;
+        border-radius: 16px;
+        background-color: $light;
+        color: $dark;
+        outline: 1px solid transparent;
+        transition: background-color .5s ease-in-out, outline-color .1s ease-in-out;
+        &:hover{
+            background-color: $secondary;
+        }
+    }
+    &_radio:focus + &_label{
+        outline-color: $secondaryDark;
+    }
+    &_radio:active + &_label{
+        outline-color: $primary;
+    }
+    &_radio:checked + &_label{
+        outline-color: $primary;
+        background-color: $primary;
+    }
+
+}

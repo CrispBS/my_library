@@ -53,10 +53,11 @@ const path = {
     }, 
     dist: {
         base: 'dist/',
-        html: 'dist/',
+        html: 'dist/*.html',
         css: 'dist/css/',
         js: 'dist/js/',
         img: 'dist/img/',
+        cssIndex: 'dist/css/index.min.css',
     },
     watch: {
         html: 'src/*.html',
@@ -74,7 +75,7 @@ export const html = () => gulp
     removeComments: true,
     collapseWhitespace: true,
 })))
-.pipe(gulp.dest(path.dist.html))
+.pipe(gulp.dest(path.dist.base))
 .pipe(browserSync.stream());
 
 export const scss = () => gulp 
@@ -84,7 +85,7 @@ export const scss = () => gulp
 .pipe(gulpIF(!dev, autoprefixer({
     cascade: false,
 })))
-.pipe(gulpIF(!dev, gcmq()))
+.pipe(gcmq())
 .pipe(gulpIF(!dev, gulp.dest(path.dist.css)))
 .pipe(gulpIF(!dev, cleanCSS({
     2: {
@@ -95,7 +96,17 @@ export const scss = () => gulp
 .pipe(gulpIF(dev, sourcemaps.write())) 
 .pipe(gulp.dest(path.dist.css))
 .pipe(browserSync.stream());
- 
+
+export const critCSS = () => gulp
+.src(path.dist.html)
+.pipe(critical({
+    base: path.dist.base,
+    inline: true,
+    css: [path.dist.cssIndex],
+}))
+.on('error', err => console.log(err))
+.pipe(gulp.dest(path.dist.base));
+
 const configWebpack = {
     mode: dev ? 'development' : 'production',
     devtool: dev ? 'eval-source-map' : false,
@@ -215,6 +226,6 @@ const develop = (ready) => {
 
 export const base = gulp.parallel(html, scss, js, image, avif, webp, copy);
 
-export const build = gulp.series(clear, base);
+export const build = gulp.series(clear, base, critCSS);
 
 export default gulp.series(develop, base, server);

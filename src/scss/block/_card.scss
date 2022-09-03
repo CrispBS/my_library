@@ -3,11 +3,15 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     color: $dark;
-    width: 336px;
+    max-width: 336px;
     padding: 8px 8px 10px;
     display: flex;
     gap: 10px;
 
+    @include desktop{
+        max-width: 377px;
+    }
+    
     &_wrapper{
         position: relative;
         width: 100px;
@@ -37,6 +41,7 @@
     }
     &_content{
         padding-top: 3px;
+        overflow-x:hidden; 
     }
     &_title{
         font-weight: 500;
@@ -58,7 +63,7 @@
     }
     &_rating{
         display: flex;
-        //gap:1px;
+        // gap:1px;
     }
     &_rating-star{
         display: block;

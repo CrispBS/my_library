@@ -1,0 +1,118 @@
+.book {
+    &_header{
+        margin-bottom: 16px;
+        @include laptop{
+            margin-bottom: 12px;
+        }
+        @include desktop{
+            margin-bottom: 16px;
+        }
+    }   
+
+    color: $light;
+    &_container{
+        @include laptop{
+            display: flex;
+            gap: 30px;
+        }   
+    }
+    &_wrapper{
+        width: 168px;
+        margin: 0px auto 20px;
+
+        @include tablet{
+            width: 300px;
+            margin-bottom: 30px;
+        }
+        @include laptop{
+            flex-basis: 249px;
+            flex-shrink: 0;
+        }
+    }
+    &_image{
+        display: block;
+        border-radius: 6px;
+        @include laptop{
+            margin-bottom: 20px;
+        }
+    }
+    &_content{
+        margin: 0 20px; 
+    }
+    &_title{
+        font-weight: 700;
+        font-size: 26px; 
+        line-height: 32px;
+        margin-bottom: 4px;
+        @include laptop{
+            font-size: 40px;
+        }
+    }
+    &_author{
+        font-size: 14px;
+        line-height: 120%;
+        color: $secondary;
+        margin-bottom: 15px;
+        @include laptop{
+            font-size: 18px;
+        }
+    }
+    &_rating{
+        display: flex;
+        margin-bottom: 15px;
+        // gap: 1px;
+    }
+    &_rating-star{
+        display: block;
+        width: 36px;
+        height: 36px;
+        margin-right: 1px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    &_subtitle{
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 130%;
+        margin-bottom: 4px;
+        @include laptop{
+            font-size: 14px;
+        }
+    }
+    &_description{
+        font-size: 12px;
+        line-height: 130%;
+        @include laptop{
+            font-size: 14px;
+        }
+    }
+    &_label{
+        width: 100%;
+        max-width: 320px;
+        height: 50px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        border-radius: 30px;
+        border: 0;
+        margin: 12px 20px;
+        background-color: $light;
+        padding: 12px 18px;
+        @include laptop{
+            margin: 0px;
+            display: none;
+        }
+        &_img{
+            display: none;
+            @include laptop{
+                display: block;
+            }
+        }
+    }
+    &_footer{
+        // @include laptop{
+        //     display: none;
+        // }
+    }
+}

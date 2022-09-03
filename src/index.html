@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="css/index.min.css">
     <script src="js/index.min.js" defer></script>
 </head>
-<body>
+<body class="body">
 <section class="library">
     <header class="header library_header">
         <div class="container header_container"> 
-            <img class="header_logo" src="img/logo.svg" alt="Логотип big Brother" width="61" height="41">
-
+            <div class="logo_container">
+                <img class="header_logo" src="img/logo.svg" alt="Логотип big Brother">
+            </div>
             <button class="header__btn-add" >Добавить книгу</button>
              
-            <button class="header_btn header_btn_search" aria-label="Найти книгу">поиск</button>
+            <button class="header_btn header_btn_search" aria-label="Найти книгу"></button>
         </div>
     </header>
 
@@ -36,10 +37,10 @@
         
                 <ul class="fields_list fields_list_sort">
                     <li class="fields_item">
-                        <button class="fields_button">от большего</button>
+                        <button class="fields_button" data-sort="down">от большего</button>
                     </li>
                     <li class="fields_item">
-                        <button class="fields_button">от меньшего</button>
+                        <button class="fields_button" data-sort="up">от меньшего</button>
                     </li>
                 </ul>
             </div>
@@ -54,7 +55,7 @@
                 </button>
         
                 <ul class="fields_list fields_list_filter">
-                    <li class="fields_item">
+                    <!--<li class="fields_item">
                         <button class="fields_button">хочу прочитать</button>
                     </li>
                     <li class="fields_item">
@@ -65,7 +66,7 @@
                     </li>
                     <li class="fields_item">
                         <button class="fields_button">не дочитал</button>
-                    </li>
+                    </li>-->  
                 </ul>
             </div>
         </div>
@@ -74,11 +75,11 @@
     <section class="container library_list-container">
         <h2 class="visually-hidden">Список книг</h2>
         <ul class="library_list">
-            <li class="library_item">
+            <!--<li class="library_item">
                 <a href="/book" data-navigo>
                     <article class="card">
                         <div class="card_wrapper">
-                            <img src="img/1984.jpg" alt="обложка 1984" class="cart_image"> 
+                            <img src="img/1984.jpg" alt="обложка 1984" class="card_image"> 
                             <p class="card_label">хочу почитать</p>
                         </div>
 
@@ -105,7 +106,7 @@
                 <a href="/book" data-navigo>
                     <article class="card">
                         <div class="card_wrapper">
-                            <img src="img/temp.jpg" alt="обложка 1984" class="cart_image"> 
+                            <img src="img/temp.jpg" alt="обложка 1984" class="card_image"> 
                             <p class="card_label">хочу почитать</p>
                         </div>
                         <div class="card_content">
@@ -126,10 +127,63 @@
                     </article>
                 </a>
             </li>
+
+            <li class="library_item">
+                <a href="/book" data-navigo>
+                    <article class="card">
+                        <div class="card_wrapper">
+                            <img src="img/1984.jpg" alt="обложка 1984" class="card_image"> 
+                            <p class="card_label">хочу почитать</p>
+                        </div>
+
+                        <div class="card_content">
+                            <h3 class="card_title">1984</h3>
+                            
+                            <p class="card_author">Джордж Оруэлл</p>
+
+                            <p class="card_description">Главный герой — Уинстон Смит — живёт в Лондоне, работает в Министерстве правды и является... </p>
+
+                            <div class="card_rating">
+                                <img class="card_rating-star" src="img/star.svg" alt="Рейтинг 4 из 5">
+                                <img class="card_rating-star" src="img/star.svg" alt="">
+                                <img class="card_rating-star" src="img/star.svg" alt="">
+                                <img class="card_rating-star" src="img/star.svg" alt="">
+                                <img class="card_rating-star" src="img/star-o.svg" alt="">
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </li>
+
+            <li class="library_item">
+                <a href="/book" data-navigo>
+                    <article class="card">
+                        <div class="card_wrapper">
+                            <img src="img/temp.jpg" alt="обложка 1984" class="card_image"> 
+                            <p class="card_label">хочу почитать</p>
+                        </div>
+                        <div class="card_content">
+                            <h3 class="card_title">Гарри Поттер и Философский камень</h3>
+                            
+                            <p class="card_author">Джоан Роулинг</p>
+
+                            <p class="card_description">Первый роман в серии книг про юного волшебника Гарри Поттера, написанный Дж. К. Роулинг. В нём... </p>
+
+                            <div class="card_rating">
+                                <img class="card_rating-star" src="img/star.svg" alt="Рейтинг 5 из 5">
+                                <img class="card_rating-star" src="img/star.svg" alt="">
+                                <img class="card_rating-star" src="img/star.svg" alt="">
+                                <img class="card_rating-star" src="img/star.svg" alt="">
+                                <img class="card_rating-star" src="img/star.svg" alt="">
+                            </div>
+                        </div>
+                    </article>
+                </a>
+            </li>-->
         </ul>
     </section>  
     
-    <footer class="footer">
+    <footer class="footer library_footer">
         <button class="footer_btn library_add-btn" aria-label="Добавить книгу">
             <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="22" cy="22" r="22" fill="currentColor"/>
@@ -143,17 +197,17 @@
 <section class="book hidden">
     <header class="header book_header">
         <div class="container header_container"> 
-            <button class="header_btn header_btn_back">назад</button>
+            <button class="header_btn header_btn_back book_btn_back"></button>
 
-            <button class="header_btn header_btn_delete">удалить</button>
+            <button class="header_btn header_btn_delete"></button>
         </div>
     </header>
 
     <div class="container book_container">
-        <div class="book_wrapper">
-            <img class="book_image" src="img/1984.jpg" alt="обложка 1984" >
+        <!----><!--div class="book_wrapper">
+            <img class="book_image" src="img/1984.jpg" alt="обложка 1984">
 
-            <button class="book_label">хочу прочитать</button>
+            <button class="book_label book_label_img">хочу прочитать</button>
         </div>
 
         <div class="book_content">
@@ -173,10 +227,10 @@
 
             <p class="book_description">Главный герой — Уинстон Смит — живёт в Лондоне, работает в Министерстве правды и является членом внешней партии. Он не разделяет партийные лозунги и идеологию и в глубине души сильно сомневается в партии, окружающей действительности и вообще во всём том, в чём только можно сомневаться. Чтобы «выпустить пар» и не совершить какой-нибудь безрассудный поступок, ведёт дневник, в котором старается излагать все свои сомнения. На людях же притворяется приверженцем партийных идей. Однако опасается, что девушка Джулия, работающая в том же министерстве, шпионит за ним и хочет разоблачить его. В то же время полагает, что высокопоставленный сотрудник их министерства, член внутренней партии некий О’Брайен также не разделяет мнения партии и является подпольным революционером.
             </p>
-        </div>
+        </div>-->
     </div>
 
-    <footer class="footer">
+    <footer class="footer book_footer">
         <button class="footer_btn book_label">хочу прочитать</button>
     </footer> 
 </section>
@@ -185,9 +239,9 @@
     <h2 class="visually-hidden">Добавить книгу</h2>
     <header class="header add_header">
         <div class="container header_container"> 
-            <button class="header_btn header_btn_back">назад</button>
+            <button class="header_btn header_btn_back add_btn_back"></button>
 
-            <button class="header_btn header_btn_search">поиск</button>
+            <button class="header_btn header_btn_search"></button>
         </div>
     </header>
 
@@ -199,41 +253,41 @@
                 <p class="add_step">шаг 1/3</p>
 
                 <label for="title" class="add_label">Название</label>
-                <input type="text" class="add_text" name="title" id="title">
+                <input type="text" class="add_text" name="title" id="title" required>
 
                 <label for="author" class="add_label">Автор</label>
-                <input type="text" class="add_text" name="author" id="author">
+                <input type="text" class="add_text" name="author" id="author" required>
 
                 <label for="description" class="add_label">Описание</label>
-                <textarea class="add_text add_text_area" name="description" id="description"></textarea>
+                <textarea class="add_text add_text_area" name="description" id="description" required></textarea>
             </fieldset>
     
-            <fieldset class="add_fieldset">
+            <fieldset class="add_fieldset hidden">
                 <legend class="add_title">Обложка</legend>
 
                 <p class="add_step">шаг 2/3</p>
 
                 <div class="upload">
-                    <p class="subtitle">Загрузите обложку</p>
+                    <p class="add_subtitle">Загрузите обложку</p>
 
                     <label class="upload_label">
                         <img src="about:blank"  class="upload_preview" alt="Превью изображения">
-                        <input type="file" class="upload_file" accept="image/*">
+                        <input type="file" name="image" class="upload_file" accept="image/*">
                     </label>
                 </div>
             </fieldset>
              
-            <fieldset class="add_fieldset">
+            <fieldset class="add_fieldset hidden">
                 <legend class="add_title">Статус и оценка</legend>
 
                 <p class="add_step">шаг 3/3</p>
 
                 <fieldset class="status">
-                    <legend>Выберите статус книги</legend>
+                    <legend class="add_subtitle">Выберите статус книги</legend>
 
                     <ul class="status_list">
                         <li class="status_item">
-                            <input class="status_radio" type="radio" name="label" id="wish" value="wish">
+                            <input class="status_radio" type="radio" name="label" id="wish" value="wish" required>
                             <label class="status_label" for="wish">хочу прочитать</label>
                         </li>
                         <li class="status_item">
@@ -252,9 +306,9 @@
                 </fieldset>
 
                 <fieldset class="star">
-                    <legend>Поставьте оценку</legend>
+                    <legend class="add_subtitle">Поставьте оценку</legend>
                     <div class="star_list">
-                        <input class="star_radio" type="radio" name="rating" id="star-rating-5" value="5">
+                        <input class="star_radio" type="radio" name="rating" id="star-rating-5" value="5" required>
                         <label class="star_icon" for="star-rating-5"></label>
                         <input class="star_radio" type="radio" name="rating" id="star-rating-4" value="4">
                         <label class="star_icon" for="star-rating-4"></label> 
@@ -274,5 +328,21 @@
         </div>
     </form>
 </section>
+
+<div class="search">
+    <div class="container search_container">
+        <form class="search_form">
+            <label>
+                <input class="search_input" type="search" name="input">
+            </label>
+            <button class="search_button">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z" 
+                    fill="currentColor"/>
+                </svg>                    
+            </button>   
+        </form>
+    </div>
+</div>
 </body>
 </html>
